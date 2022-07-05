@@ -16,7 +16,7 @@ app.use((req, res, next) => {
     next(error);
 })
 
-//this middleware prints out the error
+//this middleware sends the error nicely
 app.use((error, req, res, next) =>{
     res.status(error.status || 500).json({
         error: {
