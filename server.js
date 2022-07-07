@@ -55,7 +55,7 @@ app.delete("/9", (req, res, next) =>{
             method: req.method
         }
     });
-})
+});
 
 //middleware modules fpr error handling
 //goes here, creates a new error, then gets told to go to the second midddleware
