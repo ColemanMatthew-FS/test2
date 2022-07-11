@@ -13,13 +13,14 @@ app.get("/", (req, res, next) =>{
     });
 })
 
-app.get("/45", (req, res, next) =>{
+app.get("/:id", (req, res, next) =>{
     res.json({
         message: "Did you GET IT (by ID)?",
         metadata: {
             host: req.hostname,
             port: process.env.port,
-            method: req.method
+            method: req.method,
+            id: req.params.id
         }
     });
 })
@@ -35,24 +36,26 @@ app.post("/", (req, res, next) =>{
     });
 });
 
-app.patch("/89", (req, res, next) =>{
+app.patch("/:id", (req, res, next) =>{
     res.json({
         message: "Did you PATCH IT (by ID)?",
         metadata: {
             host: req.hostname,
             port: process.env.port,
-            method: req.method
+            method: req.method,
+            id: req.params.id
         }
     });
 });
 
-app.delete("/9", (req, res, next) =>{
+app.delete("/:id", (req, res, next) =>{
     res.json({
         message: "Did you DELETE IT (by ID)?",
         metadata: {
             host: req.hostname,
             port: process.env.port,
-            method: req.method
+            method: req.method,
+            id: req.params.id
         }
     });
 });
